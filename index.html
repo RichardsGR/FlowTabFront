@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n="meta.desc" content="FlowTab - Lightning-fast browser tab manager. Fuzzy search, smart dedup, one-click jump. Built with Rust + Tauri." />
+    <meta name="theme-color" content="#001818" />
+    <title data-i18n="meta.title">FlowTab — Smart Browser Tab Manager for macOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav id="navbar" class="nav-glass">
+      <div class="nav-inner">
+        <a href="#" class="logo">
+          <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="#3090F0" fill-opacity="0.15"/>
+            <path d="M10 16L14 20L22 12" stroke="#3090F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text">FlowTab</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+          <a href="#download" class="nav-cta" data-i18n="nav.download">Download</a>
+          <button id="lang-switcher" class="lang-switcher" aria-label="Switch language" title="Switch language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <span data-i18n="nav.lang">中文</span>
+          </button>
+          <a href="https://github.com/RichardsGR/FlowTab" target="_blank" rel="noopener" class="nav-gh" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.91-.015 3.315 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero.badge">Open Source &amp; Local-First</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero.title1">Tame Your Browser Tabs.</span><br />
+          <span class="hero-highlight" data-i18n="hero.title2">Find Anything Instantly.</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n-html="hero.subtitle">
+          Press <kbd>Ctrl+K</kbd> anywhere to summon a lightning-fast search window.
+          Fuzzy search across all your saved pages and open tabs.
+          Smart routing automatically switches to an existing tab or opens a new one.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="hero.downloadBtn">Download for macOS</span>
+          </a>
+          <a href="https://github.com/RichardsGR/FlowTab" target="_blank" rel="noopener" class="btn-secondary">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.91-.015 3.315 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span data-i18n="hero.githubBtn">View on GitHub</span>
+          </a>
+        </div>
+        <div class="hero-mockup">
+          <div class="mockup-window glass-card">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-search">
+              <svg class="mockup-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <span class="mockup-placeholder" data-i18n="mockup.placeholder">Search pages, tabs, bookmarks...</span>
+              <kbd class="mockup-shortcut">Ctrl+K</kbd>
+            </div>
+            <div class="mockup-results">
+              <div class="mockup-item">
+                <span class="mockup-favicon">📄</span>
+                <div class="mockup-info">
+                  <span class="mockup-name">FlowTab Documentation</span>
+                  <span class="mockup-url">github.com/flowtab/docs</span>
+                </div>
+                <span class="mockup-open" data-i18n="mockup.open">Open</span>
+              </div>
+              <div class="mockup-item active">
+                <span class="mockup-favicon">🔖</span>
+                <div class="mockup-info">
+                  <span class="mockup-name">Tauri 2.0 Release Notes</span>
+                  <span class="mockup-url">tauri.app/blog/tauri-2-0</span>
+                </div>
+                <span class="mockup-open" data-i18n="mockup.switch">Switch</span>
+              </div>
+              <div class="mockup-item">
+                <span class="mockup-favicon">🌐</span>
+                <div class="mockup-info">
+                  <span class="mockup-name">Rust Async Programming Guide</span>
+                  <span class="mockup-url">rust-lang.org/async</span>
+                </div>
+                <span class="mockup-open" data-i18n="mockup.open2">Open</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="section-header">
+        <span class="section-label" data-i18n="features.label">Features</span>
+        <h2 class="section-title"><span data-i18n="features.title">Everything you need to</span> <span class="highlight" data-i18n="features.titleHL">master your tabs</span></h2>
+        <p class="section-desc" data-i18n="features.desc">FlowTab combines the speed of Spotlight with browser tab intelligence to eliminate tab clutter forever.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><path d="M12 14a2 2 0 100-4 2 2 0 000 4z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/></svg>
+          </div>
+          <h3 data-i18n="features.f1.title">Global Hotkey</h3>
+          <p data-i18n-html="features.f1.desc">Press <kbd>Ctrl+K</kbd> from any app to bring up the floating search window. It appears instantly, always on top.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3 data-i18n="features.f2.title">Fuzzy Search + Pinyin</h3>
+          <p data-i18n="features.f2.desc">Find any page by name, URL, or pinyin. Powered by nucleo, the same fuzzy-matching engine used in modern code editors.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </div>
+          <h3 data-i18n="features.f3.title">Smart Routing</h3>
+          <p data-i18n="features.f3.desc">Automatically detects if a URL is already open. Switch to the existing tab instead of creating duplicates — save memory, stay focused.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 01-2.5-2.5z"/><path d="M12 6v10"/><path d="m9 9 3-3 3 3"/></svg>
+          </div>
+          <h3 data-i18n="features.f4.title">Bookmark Import</h3>
+          <p data-i18n="features.f4.desc">One-click import from Chrome or Edge bookmarks. Your existing bookmark hierarchy is automatically flattened and deduplicated.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </div>
+          <h3 data-i18n="features.f5.title">History Analysis</h3>
+          <p data-i18n="features.f5.desc">Analyzes your browsing history across Chrome, Edge, Arc, and Brave to surface your most-visited sites. Top 50 frequent pages at a glance.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+          </div>
+          <h3 data-i18n="features.f6.title">Smart Dedup + Theme</h3>
+          <p data-i18n="features.f6.desc">Intelligent URL normalization catches duplicates (www vs non-www, trailing slashes). Beautiful frosted glass UI with automatic light/dark mode.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section section-alt">
+      <div class="section-header">
+        <span class="section-label" data-i18n="steps.label">How It Works</span>
+        <h2 class="section-title"><span data-i18n="steps.title">Three steps to</span> <span class="highlight" data-i18n="steps.titleHL">tab freedom</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-card glass-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="3" width="8" height="6" rx="1"/><rect x="14" y="3" width="8" height="6" rx="1"/><rect x="2" y="13" width="8" height="8" rx="1"/><rect x="14" y="13" width="8" height="8" rx="1"/></svg>
+            </div>
+            <h3 data-i18n-html="steps.s1.title">Press <kbd>Ctrl+K</kbd></h3>
+            <p data-i18n="steps.s1.desc">Summon the floating search window from anywhere — your IDE, browser, terminal, or Finder. No need to switch context.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-card glass-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            </div>
+            <h3 data-i18n="steps.s2.title">Search &amp; Find</h3>
+            <p data-i18n="steps.s2.desc">Type a few characters to fuzzy-search across your indexed pages, open tabs, and browser history. Pinyin support for Chinese users.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-card glass-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+            <h3 data-i18n="steps.s3.title">Jump Instantly</h3>
+            <p data-i18n="steps.s3.desc">Hit Enter. FlowTab intelligently switches to an open tab or creates a new one. Zero friction, zero duplicates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browsers -->
+    <section id="browsers" class="section">
+      <div class="section-header">
+        <span class="section-label" data-i18n="browsers.label">Supported Browsers</span>
+        <h2 class="section-title"><span data-i18n="browsers.title">Works with</span> <span class="highlight" data-i18n="browsers.titleHL">your favorite browser</span></h2>
+        <p class="section-desc" data-i18n="browsers.desc">Full support for Chrome and Edge on macOS, with Firefox and more coming soon.</p>
+      </div>
+      <div class="browser-grid">
+        <div class="browser-card glass-card supported">
+          <div class="browser-icon"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="#4285F4"/><circle cx="24" cy="24" r="10" fill="#fff"/><path d="M24 4a20 20 0 000 40V4z" fill="#EA4335" clip-path="polygon(0 0 24 0 24 48 0 48)"/><path d="M24 4a20 20 0 010 40" fill="#FBBC05" clip-path="polygon(0 24 24 24 24 48 0 48)"/><path d="M44 24a20 20 0 01-20 20V4a20 20 0 0120 20z" fill="#34A853"/></svg></div>
+          <h4>Chrome</h4>
+          <span class="badge badge-full" data-i18n="browsers.chrome.badge">Full Support</span>
+          <p data-i18n="browsers.chrome.desc">Tab detection, switch, close, bookmarks, history</p>
+        </div>
+        <div class="browser-card glass-card supported">
+          <div class="browser-icon"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="#0078D7"/><path d="M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16S32.8 8 24 8z" fill="#0078D7"/><path d="M28 16c-3 2-10 3-14 7-2 2-3 6-3 6l6 3c1-4 3-6 5-7 5-3 10-2 14-2 0-3-2-6-8-7z" fill="#fff" opacity="0.9"/></svg></div>
+          <h4>Edge</h4>
+          <span class="badge badge-full" data-i18n="browsers.edge.badge">Full Support</span>
+          <p data-i18n="browsers.edge.desc">Tab detection, switch, close, bookmarks, history</p>
+        </div>
+        <div class="browser-card glass-card partial">
+          <div class="browser-icon"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="#FF7139"/><path d="M24 4a20 20 0 00-14.6 33.8l6.1-17.3a8 8 0 0116.8.4l2.3 7.3A20 20 0 0024 4z" fill="#E25825"/><circle cx="24" cy="24" r="8" fill="#FF7139"/></svg></div>
+          <h4>Firefox</h4>
+          <span class="badge badge-partial" data-i18n="browsers.firefox.badge">Partial</span>
+          <p data-i18n="browsers.firefox.desc">Open new tabs supported; full control coming soon</p>
+        </div>
+        <div class="browser-card glass-card partial">
+          <div class="browser-icon"><svg viewBox="0 0 48 48" width="48" height="48"><rect x="8" y="8" width="32" height="32" rx="8" fill="#1A1A2E"/><path d="M24 16c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" fill="#7B61FF"/><path d="M24 18a6 6 0 100 12 6 6 0 000-12z" fill="#1A1A2E"/></svg></div>
+          <h4>Arc</h4>
+          <span class="badge badge-partial" data-i18n="browsers.arc.badge">History Only</span>
+          <p data-i18n="browsers.arc.desc">Browsing history analysis supported</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="section section-alt">
+      <div class="section-header">
+        <span class="section-label" data-i18n="tech.label">Tech Stack</span>
+        <h2 class="section-title"><span data-i18n="tech.title">Built with</span> <span class="highlight" data-i18n="tech.titleHL">performance in mind</span></h2>
+        <p class="section-desc" data-i18n="tech.desc">A modern, lightweight architecture for maximum speed and minimal resource usage.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-name">Rust</span>
+          <span class="tech-role" data-i18n="tech.rust">Backend Engine</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Tauri 2.x</span>
+          <span class="tech-role" data-i18n="tech.tauri">Desktop Framework</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Svelte 5</span>
+          <span class="tech-role" data-i18n="tech.svelte">UI Layer</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">SQLite</span>
+          <span class="tech-role" data-i18n="tech.sqlite">Local Database</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">nucleo</span>
+          <span class="tech-role" data-i18n="tech.nucleo">Fuzzy Search</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">AppleScript</span>
+          <span class="tech-role" data-i18n="tech.applescript">Browser Control</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" class="section">
+      <div class="section-header">
+        <span class="section-label" data-i18n="download.label">Download</span>
+        <h2 class="section-title"><span data-i18n="download.title">Get FlowTab</span> <span class="highlight" data-i18n="download.titleHL">today</span></h2>
+        <p class="section-desc" data-i18n="download.desc">Free and open source. Currently available for macOS 12.0+, with Windows and Linux support in development.</p>
+      </div>
+      <div class="download-grid">
+        <div class="download-card glass-card">
+          <div class="download-platform">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </div>
+          <h3>macOS</h3>
+          <p class="download-desc" data-i18n="download.mac.desc">Requires macOS 12.0 or later</p>
+          <div class="download-actions">
+            <a href="https://github.com/RichardsGR/FlowTab/releases" target="_blank" rel="noopener" class="btn-accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="download.mac.btn">Download DMG</span>
+            </a>
+            <span class="download-size">~5 MB</span>
+          </div>
+        </div>
+        <div class="download-card glass-card coming-soon">
+          <div class="download-platform">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          </div>
+          <h3 data-i18n="download.win.title">Windows &amp; Linux</h3>
+          <p class="download-desc" data-i18n="download.win.desc">Coming soon — platform support in development</p>
+          <div class="download-actions">
+            <button class="btn-accent" disabled data-i18n="download.win.btn">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="#3090F0" fill-opacity="0.15"/>
+              <path d="M10 16L14 20L22 12" stroke="#3090F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text">FlowTab</span>
+          </a>
+          <p data-i18n="footer.desc">Smart browser tab manager for macOS. Built with Rust, Tauri, and Svelte.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 data-i18n="footer.product">Product</h4>
+            <a href="#features" data-i18n="footer.features">Features</a>
+            <a href="#how-it-works" data-i18n="footer.howItWorks">How It Works</a>
+            <a href="#download" data-i18n="footer.download">Download</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer.resources">Resources</h4>
+            <a href="https://github.com/RichardsGR/FlowTab" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/RichardsGR/FlowTab/issues" target="_blank" rel="noopener" data-i18n="footer.issues">Issues</a>
+            <a href="https://github.com/RichardsGR/FlowTab/blob/main/README.md" target="_blank" rel="noopener" data-i18n="footer.docs">Documentation</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2026 FlowTab. Open source under MIT License.</p>
+        <p data-i18n="footer.builtWith">Built with Rust + Tauri + Svelte. Privacy-first, local-only.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
