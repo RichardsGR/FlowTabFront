@@ -10,6 +10,7 @@ const t = {
 
     'nav.features': 'Features',
     'nav.howItWorks': 'How It Works',
+    'nav.releases': 'Releases',
     'nav.download': 'Download',
     'nav.lang': '中文',
 
@@ -18,7 +19,7 @@ const t = {
     'hero.title2': 'Find Anything Instantly.',
     'hero.subtitle': 'Press <kbd>Ctrl+K</kbd> anywhere to summon a lightning-fast search window. Fuzzy search across all your saved pages and open tabs. Smart routing automatically switches to an existing tab or opens a new one.',
     'hero.downloadBtn': 'Download for macOS',
-    'hero.githubBtn': 'View on GitHub',
+    'hero.releasesBtn': 'View Releases',
 
     'mockup.placeholder': 'Search pages, tabs, bookmarks...',
     'mockup.open': 'Open',
@@ -77,6 +78,30 @@ const t = {
     'tech.nucleo': 'Fuzzy Search',
     'tech.applescript': 'Browser Control',
 
+    'releases.label': 'Releases',
+    'releases.title': 'Version History &',
+    'releases.titleHL': 'Downloads',
+    'releases.desc': 'Download the latest version or browse the changelog for each release.',
+    'releases.latest': 'Latest',
+    'releases.prerelease': 'Pre-release',
+    'releases.download': 'Download DMG',
+    'releases.changelog': 'Changelog',
+    'releases.v1.i1': 'Initial release — cross-platform browser tab manager',
+    'releases.v1.i2': 'Global hotkey (Ctrl+K) to summon floating search window from anywhere',
+    'releases.v1.i3': 'Fuzzy search with pinyin support across indexed pages and open browser tabs',
+    'releases.v1.i4': 'Smart routing — auto-detect open tabs, switch or create new',
+    'releases.v1.i5': 'One-click bookmark import from Chrome and Edge',
+    'releases.v1.i6': 'Browsing history analysis across Chrome, Edge, Arc, Brave',
+    'releases.v1.i7': 'Light/dark frosted glass theme with automatic system follow',
+    'releases.v1.i8': 'Chinese/English internationalization',
+    'releases.v1.i9': 'System tray integration with quick-access menu',
+    'releases.v1.i10': 'Tab close and force-new actions for already-open tabs',
+    'releases.v09.i1': 'Core search engine with nucleo fuzzy matching',
+    'releases.v09.i2': 'Browser tab detection and switching via AppleScript',
+    'releases.v09.i3': 'Bookmark parsing and history analysis',
+    'releases.v09.i4': 'URL smart deduplication',
+    'releases.v09.i5': 'Settings panel and page index manager',
+
     'download.label': 'Download',
     'download.title': 'Get FlowTab',
     'download.titleHL': 'today',
@@ -89,12 +114,10 @@ const t = {
 
     'footer.desc': 'Smart browser tab manager for macOS. Built with Rust, Tauri, and Svelte.',
     'footer.product': 'Product',
-    'footer.resources': 'Resources',
     'footer.features': 'Features',
     'footer.howItWorks': 'How It Works',
+    'footer.releases': 'Releases',
     'footer.download': 'Download',
-    'footer.issues': 'Issues',
-    'footer.docs': 'Documentation',
     'footer.copyright': '© 2026 FlowTab. Open source under MIT License.',
     'footer.builtWith': 'Built with Rust + Tauri + Svelte. Privacy-first, local-only.',
   },
@@ -105,6 +128,7 @@ const t = {
 
     'nav.features': '功能',
     'nav.howItWorks': '使用方法',
+    'nav.releases': '更新日志',
     'nav.download': '下载',
     'nav.lang': 'EN',
 
@@ -113,7 +137,7 @@ const t = {
     'hero.title2': '极速检索一切。',
     'hero.subtitle': '随时随地按下 <kbd>Ctrl+K</kbd> 呼出极速搜索窗口。模糊搜索所有已保存页面和当前打开的标签页。智能路由自动切换到已有标签页或打开新页面。',
     'hero.downloadBtn': '下载 macOS 版',
-    'hero.githubBtn': '在 GitHub 查看',
+    'hero.releasesBtn': '查看更新日志',
 
     'mockup.placeholder': '搜索页面、标签页、书签...',
     'mockup.open': '打开',
@@ -172,6 +196,30 @@ const t = {
     'tech.nucleo': '模糊搜索',
     'tech.applescript': '浏览器控制',
 
+    'releases.label': '更新日志',
+    'releases.title': '版本历史 &',
+    'releases.titleHL': '下载',
+    'releases.desc': '下载最新版本或查看每个版本的更新日志。',
+    'releases.latest': '最新',
+    'releases.prerelease': '预发布',
+    'releases.download': '下载 DMG',
+    'releases.changelog': '更新日志',
+    'releases.v1.i1': '首次发布 — 跨平台浏览器标签页管理器',
+    'releases.v1.i2': '全局快捷键（Ctrl+K）随时随地呼出浮动搜索窗口',
+    'releases.v1.i3': '模糊搜索支持拼音，覆盖已索引页面和浏览器打开的标签页',
+    'releases.v1.i4': '智能路由 — 自动检测已打开标签页，切换或新建',
+    'releases.v1.i5': '一键导入 Chrome 和 Edge 书签',
+    'releases.v1.i6': '浏览历史分析，支持 Chrome、Edge、Arc、Brave',
+    'releases.v1.i7': '明暗毛玻璃主题，支持自动跟随系统',
+    'releases.v1.i8': '中英文国际化',
+    'releases.v1.i9': '系统托盘集成，快捷菜单',
+    'releases.v1.i10': '已打开标签页的关闭和强制新建操作',
+    'releases.v09.i1': '基于 nucleo 模糊匹配的核心搜索引擎',
+    'releases.v09.i2': '通过 AppleScript 实现浏览器标签页检测与切换',
+    'releases.v09.i3': '书签解析与历史分析',
+    'releases.v09.i4': 'URL 智能去重',
+    'releases.v09.i5': '设置面板与页面索引管理',
+
     'download.label': '下载',
     'download.title': '立即获取',
     'download.titleHL': 'FlowTab',
@@ -184,12 +232,10 @@ const t = {
 
     'footer.desc': '智能浏览器标签页管理器 for macOS。基于 Rust、Tauri 和 Svelte 构建。',
     'footer.product': '产品',
-    'footer.resources': '资源',
     'footer.features': '功能',
     'footer.howItWorks': '使用方法',
+    'footer.releases': '更新日志',
     'footer.download': '下载',
-    'footer.issues': '问题反馈',
-    'footer.docs': '文档',
     'footer.copyright': '© 2026 FlowTab. 基于 MIT 许可证开源。',
     'footer.builtWith': '基于 Rust + Tauri + Svelte 构建。隐私优先，纯本地运行。',
   },
@@ -262,7 +308,7 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(
-  '.feature-card, .step-card, .browser-card, .tech-item, .download-card, .section-header'
+  '.feature-card, .step-card, .browser-card, .tech-item, .release-card, .download-card, .section-header'
 ).forEach((el) => {
   el.classList.add('fade-in');
   observer.observe(el);

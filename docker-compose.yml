@@ -1,0 +1,8 @@
+services:
+  flowtab:
+    build: .
+    image: flowtab-front:latest
+    container_name: flowtab-front
+    ports:
+      - "80:80"
+    restart: unless-stopped
